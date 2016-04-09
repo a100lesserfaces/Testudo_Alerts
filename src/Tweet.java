@@ -14,6 +14,10 @@ import twitter4j.auth.RequestToken;
 import twitter4j.conf.Configuration;
 import twitter4j.conf.ConfigurationBuilder;
 
+/*
+ * Bitcamp 2016 - Testudo Alerts
+ */
+
 public class Tweet {
 	
 	// Consumer Key
@@ -47,7 +51,7 @@ public class Tweet {
 	  }
 	
 	/*
-	 * Ended up not using this because we figured out the access tokens
+	 * Constructs the tweet by extracting the title and concatenating the link
 	 */
 	public static String constructTweet(String url) {
 		String tweet = "";
@@ -115,23 +119,6 @@ public class Tweet {
 	      }
 	      return title;
 	    }
-	
-	public static void sendTweet(String tweet) {
-		char[] pwd = null;
-		
-		try {
-			Console con = System.console();
-			if (con != null) {
-				pwd = con.readPassword("Password:");
-			}
-		} catch (Exception e) {
-			//bleh
-			System.out.println("We tried at least.");
-			e.printStackTrace();
-		}
-		 //send tweet
-	
-	}
 	
 
 	private static void authorizeTwitter(String message) throws MalformedURLException, IOException, TwitterException {
